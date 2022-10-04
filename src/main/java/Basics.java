@@ -2,7 +2,7 @@
  * This file contains a few exercises to familiarize you with Java.
  * You should read this file from top-to-bottom. Any tasks you are to complete
  * are labelled with TODO
- *
+ * <p>
  * For your convenience, we have also included references to the
  * relevant readings for each task.
  */
@@ -43,7 +43,7 @@ public class Basics {
         /* TODO (Task 1): Write a line of code below that prints the string
          *                Hello World!
          */
-
+        System.out.println("Hello World!");
 
 
         /* 4. In Python, we could declare variables using a simple assignment
@@ -62,7 +62,7 @@ public class Basics {
          * TODO (Task 2): Create a variable named my_variable and assign it the
          *                value 100.
          */
-
+        int my_variable = 100;
 
 
         /* Do not remove the line below: if you did task 2 correctly, then
@@ -99,7 +99,9 @@ public class Basics {
          * Current count: 1
          * Current count: 0
          */
-
+        for (int a = 10; a >= 0; a--) {
+            System.out.println("Current count: " + a);
+        }
 
     }
 
@@ -130,7 +132,7 @@ public class Basics {
      *
      * @param to_split   A string containing EXACTLY 7 words, separated by
      *                   spaces.
-     * @return           The first letter of every word in to_split
+     * @return The first letter of every word in to_split
      */
     public static String split(String to_split) {
         /* TODO (Task 4): Complete this method body.
@@ -141,6 +143,18 @@ public class Basics {
          *                you may use them if you wish.
          */
         StringBuilder ret = new StringBuilder();
+        String[] splitted = to_split.split("(\\s)+");
+//        for (String s:splitted) {
+//            ret.append(s.charAt(0));
+//        }
+        ret.append(splitted[0].charAt(0))
+                .append(splitted[1].charAt(0))
+                .append(splitted[2].charAt(0))
+                .append(splitted[3].charAt(0))
+                .append(splitted[4].charAt(0))
+                .append(splitted[5].charAt(0))
+                .append(splitted[6].charAt(0));
+
 
         // Fill in the rest of the body here
 
@@ -159,7 +173,7 @@ public class Basics {
      * (Relevant readings: 1.6. Arrays and 1.8.2. for Loops)
      *
      * @param arr    An array of integers
-     * @return       The sum of all integers at odd indices in arr
+     * @return The sum of all integers at odd indices in arr
      */
     public static int oddSum(int[] arr) {
         int current_sum = 0;
@@ -170,7 +184,9 @@ public class Basics {
          *                You can index into arrays as we do in Python
          *                (e.g. arr[i] gives you the item at index i).
          */
-
+        for (int a = 1; a < arr.length; a+=2) {
+            current_sum += arr[a];
+        }
         return current_sum;
     }
 
